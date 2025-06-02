@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipotheticus</title>
+</head>
+<body>
+    <script>
+       var hnormal = 10
+       var hextra = 15
+       hnormal = Number(prompt("Horas normais: "))
+       hextra = Number(prompt("Horas extras: "))
+       
+       salarioBruto = (hnormal * 10) + (hextra * 15)
+       salarioLiquido = salarioBruto - (salarioBruto * 10 / 100)
+      
+       alert("Seu salário bruto é: " + salarioBruto)
+       alert("Seu salário com desconto é: " + salarioLiquido)
+
+    </script>
+</body>
+</html>
