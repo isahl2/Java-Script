@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(77, 35, 76); /*cor de fundo */
+    text-align: center; /*alinhar todos os itens */
+}
+
+h1{
+    text-align: center; /*alinhar título*/
+    font-size: 60px; /*tamanho da fonte*/
+    color: azure; /*cor do h1*/
+}
+
+.container{
+    width: 400px;             /* Largura da caixa */
+    height: 300px;            /* Altura da caixa */
+    background-color: #7f4caf; /* Cor de fundo */
+    border-radius: 20px;
+    border: 2px solid #000;   /* Borda preta de 2px */
+    padding: 90px;            /* Espaço interno */
+    margin: 50px auto;        /* Espaço externo e centralização */
+    color: white;             /* Cor do texto */
+    text-align: center;       /* Centraliza o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+}
+
+.entrada{
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+#botao{
+    background-color: #b36af3;
+    border-radius: 20px;
+    width: 250px;
+    height: 50px;
+    margin: 20px;
+}
+
