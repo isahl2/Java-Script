@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do, while,continue e break</title>
+</head>
+<body>
+    <script>
+        alert("Digite ZERO para sair")
+        do{
+            num = Number(prompt("Digite um número: "))
+            if(num == 0 || isNaN(num)) /*se não for um caracter ele sai */
+            break
+            num%2==0?alert("Número par " + num):
+                alert("Número ímpar " + num)
+
+        } while(true)
+    </script>
+</body>
+</html>
