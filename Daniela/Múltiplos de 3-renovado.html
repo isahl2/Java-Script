@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplos</title>
+    <style>
+        body{
+            background-color: darkslateblue;
+        }
+    </style>
+</head>0000000000
+<body>
+    <script>
+        
+        //múltiplos
+
+        var soma = 0
+        var escolha = Number(prompt("De qual múltiplo você quer a soma? "))
+        var inicio =  Number(prompt("Você quer que comece de em que número? "))
+        var fim =  Number(prompt("Você quer que termine em qual número? "))
+
+
+        for(let x = inicio; x <= fim; x++){
+            if(x % escolha == 0){
+            soma = soma + x}
+
+            }
+        alert("Resultado: " + soma)
+
+
+
+    </script>
+</body>
+</html>
