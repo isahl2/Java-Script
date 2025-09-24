@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aluguel</title>
+  <style>
+    body {
+     
+      background: #c96ed1;
+      padding: 20px;
+      
+    }
+
+    h1 {
+      text-align: center;
+      color: #000000;
+    }
+
+    .container {  /*caixa*/
+      max-width: 500px;
+      margin: auto;
+      background: #fadbff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    label {   /*barra de digitar*/
+      display: block;
+      margin: 8px  4px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 60%;
+      padding: 6px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #ff00c8;
+      color: #fff;
+      border: none;
+      padding: 10px 17px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #d900a6;
+    }
+
+  </style>
+
+
+</head>
+<body>
+
+  <h1>Aluguel dos quartos</h1>
+
+<!--divs-->
+
+  <div class="container">
+
+    <label>Quantos quartos serão alugados?</label>
+    <input type="number" id="qtd" min="1" max="10">
+    <button onclick="confirmarQtd()">Confirmar</button>
+
+    <div id="formAluguel"></div>
+    <div id="relatorio" class="report"></div>
+  </div>
+
+
+  <script>
+
+    //array
+
+
+    let quartos = new Array(11).fill(null);
+    let total = 0;     
+    let atual = 0;     
+
+    function confirmarQtd() {
+
+
+      total = parseInt(document.getElementById("qtd").value);
+
+      if (isNaN(total) || total < 1 || total > 10) {
+        alert("Digite quartos disponíveis entre 1 e 10");
+        return;
+      }
+
+      atual = 1;
+      mostrarFormulario();
+    }
+
+    function mostrarFormulario() {  //formulário
+
+      let area = document.getElementById("formAluguel");
+
+      area.innerHTML =
+        "<h3>Aluguel #" + atual + "</h3>" +
+
+        "<label>Nome:</label><input type='text' id='nome'>" +
+        "<label>Email:</label><input type='text' id='email'>" +
+        "<label>Quarto (1 a 10):</label><input type='number' id='quarto' min='1' max='10'>" +
+
+        "<button onclick='registrar()'>Registrar</button>";
+    }
+
+    function registrar() {
+
+      let nome = document.getElementById("nome").value;
+      let email = document.getElementById("email").value;
+      let quarto = parseInt(document.getElementById("quarto").value);
+
+      if (nome === "" || email === "" || isNaN(quarto) || quarto < 1 || quarto > 10) {
+        alert("Preencha o formulário corretamente");
+        return;
+      }
+
+      if (quartos[quarto] !== null) {
+        alert("Esse quarto já está ocupado");
+        return;
+      }
+
+      quartos[quarto] = {nome: nome, email: email};
+
+      if (atual < total) {
+        atual++;
+        mostrarFormulario();
+      } else {
+        document.getElementById("formAluguel").innerHTML = "";
+        mostrarRelatorio();
+      }
+    }
+
+    function mostrarRelatorio() {  //quantidade de registros
+
+      let texto = "<h3>Quartos ocupados:</h3>";
+      for (let i = 1; i <= 10; i++) {
+        if (quartos[i] !== null) {
+
+          texto += i + ": " + quartos[i].nome + ", " + quartos[i].email + "<br>";
+        }
+      }
+      document.getElementById("relatorio").innerHTML = texto;
+    }
+  </script>
+</body>
+</html>
